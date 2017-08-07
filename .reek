@@ -1,0 +1,8 @@
+---
+UtilityFunction:
+  public_methods_only: true
+NestedIterators:
+  ignore_iterators:
+    - tap
+    - is
+    - on
