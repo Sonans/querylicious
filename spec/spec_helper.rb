@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rspec'
+require 'rspec-parameterized'
 require 'querylicious'
 
 RSpec.configure do |config|
@@ -28,27 +29,9 @@ RSpec::Matchers.define :be_a_kv_pair do
   end
 end
 
-RSpec::Matchers.define :have_key do |expected|
-  match do |pair|
-    @actual = pair.key
-    values_match? expected, @actual
-  end
-
-  diffable
-end
-
-RSpec::Matchers.define :have_value do |expected|
-  match do |pair|
-    @actual = pair.value
-    values_match? expected, @actual
-  end
-
-  diffable
-end
-
-RSpec::Matchers.define :have_op do |expected|
-  match do |pair|
-    @actual = pair.op
+RSpec::Matchers.define :have_size do |expected|
+  match do |arr|
+    @actual = arr.size
     values_match? expected, @actual
   end
 
