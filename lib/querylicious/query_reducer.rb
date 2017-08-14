@@ -3,7 +3,7 @@
 require 'querylicious/types'
 require 'querylicious/parser'
 require 'querylicious/transform'
-require 'querylicious/matchers'
+require 'querylicious/matcher'
 
 require 'dry-initializer'
 
@@ -20,10 +20,7 @@ module Querylicious
 
     def call(reducable, query)
       parse_query(query).reduce(reducable) do |memo, rule|
-        Matchers::KeyValuePairMatcher.call(
-          rule,
-          &reducer.to_proc.curry.call(memo)
-        )
+        Matcher.call(rule, &reducer.to_proc.curry.call(memo))
       end
     end
 
