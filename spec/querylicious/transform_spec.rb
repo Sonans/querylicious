@@ -95,6 +95,18 @@ RSpec.describe Querylicious::Transform do
             { key: 'phrase', value: 'cats' },
             { key: 'created', value: Date.new(2012, 4, 30), op: :lteq }
           ]],
+          ['cats -created:2012-04-30..*', [
+            { key: 'phrase', value: 'cats' },
+            { key: 'created', value: Date.new(2012, 4, 30), op: :lt }
+          ]],
+          ['cats created:>2017-01-01T01:00:00+07:00', [
+            { key: 'phrase', value: 'cats' },
+            {
+              key: 'created',
+              value: DateTime.new(2017, 1, 1, 1, 0, 0, '+7'),
+              op: :gt
+            }
+          ]],
           ['cats created:2017-01-01T01:00:00+07:00..2017-03-01T15:30:15+07:00', [
             { key: 'phrase', value: 'cats' },
             {
