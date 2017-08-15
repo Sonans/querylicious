@@ -18,6 +18,8 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = %w[lib]
 
+  spec.required_ruby_version = '>= 2.3'
+
   spec.add_runtime_dependency 'parslet', '~> 1.8'
   spec.add_runtime_dependency 'dry-matcher', '~> 0.6.0'
   spec.add_runtime_dependency 'dry-types', '~> 0.11.0'
