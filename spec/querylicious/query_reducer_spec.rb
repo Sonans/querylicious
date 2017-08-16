@@ -15,7 +15,7 @@ RSpec.describe Querylicious::QueryReducer do
             arr.reject { |item| item == phrase }
           end
 
-          m.key 'size', type: Integer do |size|
+          m.key 'size', type: Querylicious::Types::Int do |size|
             arr.select { |item| item.size == size }
           end
 
