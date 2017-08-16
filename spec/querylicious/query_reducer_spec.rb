@@ -42,7 +42,9 @@ RSpec.describe Querylicious::QueryReducer do
             [strings, 'size:>3', %w[pizza]],
             [strings, 'size:"5"', strings],
             [strings, 'baz', []],
-            [strings, 'fnord:23', strings]
+            [strings, 'fnord:23', strings],
+            [strings, '', strings],
+            [strings, nil, strings]
           ].map { |params| [case_name[params[1]], *params] }
         end
 

@@ -43,7 +43,7 @@ module Querylicious
     end
 
     def parse_query(query)
-      Array(transformer.apply(parser.parse(query.strip)))
+      Array(transformer.apply(parser.parse(query.to_s.strip)))
     end
   end
 end

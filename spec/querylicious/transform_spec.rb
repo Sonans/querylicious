@@ -7,6 +7,15 @@ RSpec.describe Querylicious::Transform do
   let(:transformer) { described_class.new }
 
   context '#apply' do
+    context 'with an empty query' do
+      let(:query) { '' }
+
+      context 'the return value' do
+        subject { transformer.apply parser.parse(query) }
+
+        it { is_expected.to eq nil }
+      end
+    end
     context 'with a single statmeent query' do
       where(:case_name, :query, :result) do
         [

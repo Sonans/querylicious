@@ -8,6 +8,7 @@ require 'querylicious/key_value_pair'
 module Querylicious
   # Transformer for turning a parsed query string into a list of KeyValuePair
   class Transform < Parslet::Transform
+    rule('') { nil }
     rule(string: simple(:it)) { Types::Coercible::String[it] }
     rule(integer: simple(:it)) { Types::Form::Int[it] }
     rule(date: simple(:it)) { Types::Form::Date[it] }

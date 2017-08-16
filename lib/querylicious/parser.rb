@@ -6,7 +6,7 @@ module Querylicious
   # Parser for Querylicious search queries
   class Parser < Parslet::Parser
     rule(:expression) do
-      (kv_pair | phrase) >> (space >> expression).repeat
+      ((kv_pair | phrase) >> (space >> expression).repeat).maybe
     end
 
     rule(:phrase) do
