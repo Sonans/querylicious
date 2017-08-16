@@ -22,12 +22,12 @@ module Querylicious
 
     rule(:key) { word }
     rule(:value) do
-      range | (kv_op.as(:op).maybe >> (datetime | integer | word | string))
+      list | range | (kv_op.as(:op).maybe >> (datetime | integer | word | string))
     end
 
     rule(:kv_op) { (str('>=') | str('>') | str('<=') | str('<')).as(:symbol) }
 
-    rule(:word) { match('[[:graph:]&&[^":.]]').repeat(1).as(:string) }
+    rule(:word) { match('[[:graph:]&&[^":.,]]').repeat(1).as(:string) }
     rule(:string) do
       quotemark >> match('[[^"]&&[:print:]]').repeat(0).as(:string) >> quotemark
     end
@@ -39,6 +39,14 @@ module Querylicious
         (star | datetime | integer | word).as(:end)
       ).as(:range)
     end
+
+    rule(:list) do
+      ((range | datetime | integer | word | string) >>
+        (comma >>
+        (range | datetime | integer | word | string)).repeat(1)
+      ).as(:list)
+    end
+
     rule(:datetime) do
       (date >> str('T') >> time).as(:datetime) | date.as(:date)
     end
@@ -56,6 +64,7 @@ module Querylicious
     rule(:quotemark) { match('"') }
     rule(:star)      { str('*').as(:symbol) }
     rule(:dotdot)    { str('..') }
+    rule(:comma) { str(',') }
 
     rule(:space)     { match('[[:space:]]').repeat(1) }
     rule(:space?)    { space.maybe }

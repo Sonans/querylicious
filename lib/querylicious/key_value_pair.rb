@@ -18,7 +18,8 @@ module Querylicious
               Types::Strict::Int |
               Types::Strict::Date |
               Types::Strict::DateTime |
-              Types::Strict::Range
+              Types::Strict::Range |
+              Types::Strict::Array
     attribute :op, Operators.optional.default(:eql)
   end
 end

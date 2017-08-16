@@ -29,6 +29,8 @@ module Querylicious
       end
     end
 
+    rule( list: sequence(:it)) { Types::Form::Array[it] }
+
     rule(range: { start: simple(:first), end: simple(:last) }) do
       if first == :* && last == :*
         :*
@@ -56,6 +58,13 @@ module Querylicious
       KeyValuePair.new(key: key, value: value)
     end
     rule(pair: { key: simple(:key), value: simple(:value), op: simple(:op) }) do
+      KeyValuePair.new(key: key, value: value, op: op)
+    end
+
+    rule(pair: { key: simple(:key), value: sequence(:value) }) do
+      KeyValuePair.new(key: key, value: value)
+    end
+    rule(pair: { key: simple(:key), value: sequence(:value), op: simple(:op) }) do
       KeyValuePair.new(key: key, value: value, op: op)
     end
 
