@@ -14,7 +14,11 @@ module Querylicious
       end
 
       def not_phrase(&block)
-        key('phrase', op: :not_eql, type: Types::Strict::String, &block)
+        not_key('phrase', type: Types::Strict::String, &block)
+      end
+
+      def not_key(key, type: Types::Any, &block)
+        key(key, op: :not_eql, type: type, &block)
       end
     end
 

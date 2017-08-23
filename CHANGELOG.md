@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Add `not_key` reducer alias
+
 ## [0.2.0] - 2017-08-15
 ### Added
 - Add support for lists (arrays)
