@@ -149,6 +149,10 @@ RSpec.describe Querylicious::Transform do
           ['cats breed:tabby,persian', [
             { key: 'phrase', value: 'cats' },
             { key: 'breed', value: %w[tabby persian], op: :eql }
+          ]],
+          ['cats owner:name:bob', [
+            { key: 'phrase', value: 'cats' },
+            { key: 'owner', value: 'name:bob', op: :eql }
           ]]
         ].map { |params| [params.first.inspect, *params] }
       end
