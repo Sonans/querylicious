@@ -20,7 +20,8 @@ RSpec.describe Querylicious::Transform do
       where(:case_name, :query, :result) do
         [
           ['cats', { key: 'phrase', value: 'cats', op: :eql }],
-          ['"fluffy cats"', { key: 'phrase', value: 'fluffy cats', op: :eql }]
+          ['"fluffy cats"', { key: 'phrase', value: 'fluffy cats', op: :eql }],
+          ['"Dwayne \"The Rock\" Johnson"', { key: 'phrase', value: 'Dwayne "The Rock" Johnson', op: :eql}]
         ].map { |params| [params.first.inspect, *params] }
       end
 
@@ -145,6 +146,10 @@ RSpec.describe Querylicious::Transform do
           ['build label:"bug fix"', [
             { key: 'phrase', value: 'build' },
             { key: 'label', value: 'bug fix', op: :eql }
+          ]],
+          ['cats owner:"Dwayne \"The Rock\" Johnson"', [
+            { key: 'phrase', value: 'cats' },
+            { key: 'owner', value: 'Dwayne "The Rock" Johnson', op: :eql }
           ]],
           ['cats breed:tabby,persian', [
             { key: 'phrase', value: 'cats' },

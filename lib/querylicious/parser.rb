@@ -32,7 +32,7 @@ module Querylicious
       match('[[:graph:]&&[^".,]]').repeat(1).as(:string)
     end
     rule(:quoted_string) do
-      quotemark >> match('[[^"]&&[:print:]]').repeat(0).as(:string) >> quotemark
+      str('"') >> (str('\"') | match('[[^"]&&[:print:]]')).repeat(0).as(:string) >> str('"')
     end
     rule(:integer) { match('\d').repeat(1).as(:integer) }
 
@@ -64,7 +64,6 @@ module Querylicious
       str('Z') | (str('+') >> digits2 >> str(':') >> digits2)
     end
 
-    rule(:quotemark) { match('"') }
     rule(:star)      { str('*').as(:symbol) }
     rule(:dotdot)    { str('..') }
     rule(:comma) { str(',') }

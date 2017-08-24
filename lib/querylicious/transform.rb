@@ -9,7 +9,7 @@ module Querylicious
   # Transformer for turning a parsed query string into a list of KeyValuePair
   class Transform < Parslet::Transform
     rule('') { nil }
-    rule(string: simple(:it)) { Types::Coercible::String[it] }
+    rule(string: simple(:it)) { Types::Coercible::String[it].gsub('\"', '"') }
     rule(integer: simple(:it)) { Types::Form::Int[it] }
     rule(date: simple(:it)) { Types::Form::Date[it] }
     rule(datetime: simple(:it)) { Types::Form::DateTime[it] }
@@ -44,7 +44,10 @@ module Querylicious
     end
 
     rule(phrase: simple(:text)) do
-      KeyValuePair.new(key: 'phrase', value: text)
+      KeyValuePair.new(
+        key: 'phrase',
+        value: Types::Coercible::String[text]
+      )
     end
     rule(phrase: { object: simple(:text), op: simple(:op) }) do
       KeyValuePair.new(
