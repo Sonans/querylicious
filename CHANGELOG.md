@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.0] - 2017-11-28
 ### Added
 - Add `not_key` reducer alias
 
@@ -26,5 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial implementation of querylicious, with query-parser and query-reducer
 
-[Unreleased]: https://github.com/Sonans/querylicious/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/Sonans/querylicious/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/Sonans/querylicious/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/Sonans/querylicious/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/Sonans/querylicious/compare/v0.0.0...v0.1.0
