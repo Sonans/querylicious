@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'reek', '~> 4.7'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec-parameterized', '~> 0.4.0'
-  spec.add_development_dependency 'rubocop', '~> 0.49.1'
-  spec.add_development_dependency 'pry', '~> 0.10.4'
+  spec.add_development_dependency 'rubocop', '~> 0.51.0'
+  spec.add_development_dependency 'pry', '~> 0.11.0'
   spec.add_development_dependency 'simplecov', '~> 0.15.0'
 end
