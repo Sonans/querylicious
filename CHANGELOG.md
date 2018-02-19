@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Changed
+- Update allowed versions of `dry-matcher` gem
+
 ## [0.3.0] - 2017-11-28
 ### Added
 - Add `not_key` reducer alias
