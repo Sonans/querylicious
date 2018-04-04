@@ -1,4 +1,4 @@
-# Querylicious
+<div align="center"><img src="https://res.cloudinary.com/huyderman/image/upload/c_scale,dpr_auto,f_auto,fl_preserve_transparency,q_auto,w_728/v1522834080/querylicious.png"></div>
 
 Querylicious is an opinionated search query parser.
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Sonans/querylicious. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/huyderman/querylicious. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -38,4 +38,8 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Code of Conduct
 
-Everyone interacting in the Querylicious project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/querylicious/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Querylicious project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/huyderman/querylicious/blob/master/CODE_OF_CONDUCT.md).
+
+## Credits
+
+Thanks to the talented Alex Daily ([@Daily@tootplanet.space](https://tootplanet.space/@Daily) or [@heyalexdaily@twitter.com](https://twitter.com/heyalexdaily)) for creating the awesome logo!
