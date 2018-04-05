@@ -58,4 +58,23 @@ RSpec.describe Querylicious::QueryReducer do
       end
     end
   end
+
+  context '#to_proc' do
+    context 'return value' do
+      let(:reducer) do
+        described_class.new(->(arr, m) { default { arr } })
+      end
+
+      subject { reducer.to_proc }
+      let(:array) { %w[foo bar pizza] }
+
+      it { is_expected.to be_a Proc }
+
+      context 'when called' do
+        subject { reducer.to_proc.call(array, '') }
+
+        it { is_expected.to eq array }
+      end
+    end
+  end
 end

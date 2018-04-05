@@ -29,7 +29,7 @@ module Querylicious
     end
 
     def to_proc
-      method(:call)
+      public_method(:call).to_proc
     end
 
     private
