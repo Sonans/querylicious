@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Changed
+- Moved repository to https://github.com/huyderman/querylicious and updated branding
+
 ## [0.3.1] - 2018-02-19
 
 ## Changed
@@ -32,8 +35,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial implementation of querylicious, with query-parser and query-reducer
 
-[Unreleased]: https://github.com/Sonans/querylicious/compare/v0.3.1...HEAD
-[0.3.1]: https://github.com/Sonans/querylicious/compare/v0.3.0...v0.3.1
-[0.3.0]: https://github.com/Sonans/querylicious/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/Sonans/querylicious/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/Sonans/querylicious/compare/v0.0.0...v0.1.0
+[Unreleased]: https://github.com/huyderman/querylicious/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/huyderman/querylicious/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/huyderman/querylicious/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/huyderman/querylicious/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/huyderman/querylicious/compare/v0.0.0...v0.1.0
