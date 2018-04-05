@@ -1,6 +1,13 @@
-<div align="center"><img src="https://res.cloudinary.com/huyderman/image/upload/c_scale,dpr_auto,f_auto,fl_preserve_transparency,q_auto,w_728/v1522834080/querylicious.png"></div>
+<div align="center">
+    <img srcset="https://res.cloudinary.com/huyderman/image/upload/c_scale,dpr_0.75,f_auto,fl_preserve_transparency,q_auto,w_728/v1522834080/querylicious 0.75x
+                 https://res.cloudinary.com/huyderman/image/upload/c_scale,dpr_1,f_auto,fl_preserve_transparency,q_auto,w_728/v1522834080/querylicious 1x
+                 https://res.cloudinary.com/huyderman/image/upload/c_scale,dpr_1.3,f_auto,fl_preserve_transparency,q_auto,w_728/v1522834080/querylicious 1.3x
+                 https://res.cloudinary.com/huyderman/image/upload/c_scale,dpr_1.5,f_auto,fl_preserve_transparency,q_auto,w_728/v1522834080/querylicious 1.5x
+                 https://res.cloudinary.com/huyderman/image/upload/c_scale,dpr_2,f_auto,fl_preserve_transparency,q_auto,w_728/v1522834080/querylicious 2x"
+         src="https://res.cloudinary.com/huyderman/image/upload/c_scale,dpr_auto,f_auto,fl_preserve_transparency,q_auto,w_728/v1522834080/querylicious">
+</div>
 
-Querylicious is an opinionated search query parser.
+> Querylicious is an opinionated search query parser and reducer.
 
 ## Installation
 
