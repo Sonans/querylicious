@@ -11,7 +11,8 @@ module Querylicious
 
     rule(:phrase) do
       (
-        (str('NOT').as(:symbol).as(:op) >> space).maybe >> (word | quoted_string)
+        (str('NOT').as(:symbol).as(:op) >> space)
+          .maybe >> (word | quoted_string)
       ).as(:phrase)
     end
 
@@ -22,7 +23,10 @@ module Querylicious
 
     rule(:key) { word }
     rule(:value) do
-      list | range | (kv_op.as(:op).maybe >> (datetime | integer | simple_string | quoted_string))
+      list | range | (
+        kv_op.as(:op)
+          .maybe >> (datetime | integer | simple_string | quoted_string)
+      )
     end
 
     rule(:kv_op) { (str('>=') | str('>') | str('<=') | str('<')).as(:symbol) }
@@ -32,7 +36,8 @@ module Querylicious
       match('[[:graph:]&&[^".,]]').repeat(1).as(:string)
     end
     rule(:quoted_string) do
-      str('"') >> (str('\"') | match('[[^"]&&[:print:]]')).repeat(0).as(:string) >> str('"')
+      str('"') >> (str('\"') |
+        match('[[^"]&&[:print:]]')).repeat(0).as(:string) >> str('"')
     end
     rule(:integer) { match('\d').repeat(1).as(:integer) }
 
