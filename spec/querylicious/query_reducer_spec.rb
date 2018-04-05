@@ -56,6 +56,17 @@ RSpec.describe Querylicious::QueryReducer do
           end
         end
       end
+
+      context 'and a string with trailing whitespace' do
+        let(:query) { 'foo ' }
+        let(:stripped_query) { 'foo' }
+
+        subject { reducer.call(strings, query) }
+
+        it 'should equal the result from query without trailing whitespace' do
+          is_expected.to eq reducer.call(strings, stripped_query)
+        end
+      end
     end
   end
 
