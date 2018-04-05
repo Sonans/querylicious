@@ -7,6 +7,8 @@
          src="https://res.cloudinary.com/huyderman/image/upload/c_scale,dpr_auto,f_auto,fl_preserve_transparency,q_auto,w_728/v1522834080/querylicious">
 </div>
 
+[![Gem Version](https://badge.fury.io/rb/querylicious.svg)](https://badge.fury.io/rb/querylicious)
+
 > Querylicious is an opinionated search query parser and reducer.
 
 ## Installation
