@@ -8,6 +8,7 @@
 </div>
 
 [![Gem Version](https://badge.fury.io/rb/querylicious.svg)](https://badge.fury.io/rb/querylicious)
+[![Build Status](https://travis-ci.org/huyderman/querylicious.svg?branch=master)](https://travis-ci.org/huyderman/querylicious)
 
 > Querylicious is an opinionated search query parser and reducer.
 
