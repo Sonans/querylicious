@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = 'querylicious'
   spec.version       = version.split('+').first
   spec.authors       = ['Jo-Herman Haugholt']
-  spec.email         = ['jo-herman@sonans.no']
+  spec.email         = ['johannes@huyderman.com']
 
   spec.summary       = 'An opinionated search query parser'
-  spec.homepage      = 'https://github.com/Sonans/querylicious'
+  spec.homepage      = 'https://github.com/huyderman/querylicious'
   spec.license       = 'MIT'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
