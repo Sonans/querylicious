@@ -8,7 +8,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6eeb81253ec37a703d9f/test_coverage)](https://codeclimate.com/github/huyderman/querylicious/test_coverage)
 [![Join the chat at https://gitter.im/querylicious/Lobby](https://badges.gitter.im/querylicious/Lobby.svg)](https://gitter.im/querylicious/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-> Querylicious is an opinionated search query parser and reducer.
+> Querylicious is an opinionated and repository agnostic search query parser and reducer.
 
 ## Installation
 
@@ -28,7 +28,90 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Querylicious parses [GitHub-style search queries](https://help.github.com/articles/understanding-the-search-syntax/), and let's you specify an reducer to generate the result. The reducer is a callable object such as an proc. Here is an simple example where the repository is an array of strings:
+
+```rb
+repository = %w[Garnet Amethyst Pearl Steven]
+
+reducer = lambda do |array, m|
+  m.phrase do |phrase|
+    array.select { |item| item.upcase.include?(phrase.upcase) }
+  end
+
+  m.not_phrase do |phrase|
+    array.reject { |item| item.upcase.include?(phrase.upcase) }
+  end
+
+  m.default { arr }
+end
+
+query_reducer = Querylicious::QueryReducer.new(reducer)
+
+query_reducer.call(repository, 'am')         #=> ["Amethyst"]
+query_reducer.call(repository, 'NOT Steven') #=> ["Garnet", "Amethyst", "Pearl"]
+```
+
+`phrase` is the basic search type intended for free text search or similar. But querylicious also supports defining property search with many possible modifiers.
+
+```rb
+# The query "stars:n" searches for when `stars` is the value n
+m.key 'stars' do |array, stars|
+  # ...
+end
+
+# You can use `dry-types` type-definitions if you wish to handle different types differently.
+# The parser can return the following types:
+# `[String, Integer, Date, DateTime, Range]`
+
+# The query "stars:1" searches for when `stars` is an integer `1`
+m.key 'stars', type: Querylicious::Types::Integer do |array, stars|
+  # ...
+end
+
+# The query "stars:1..10" searches for when `stars` is a range `1..10`
+m.key 'stars', type: Querylicious::Types::Range do |array, stars|
+  # ...
+end
+
+# Properties also support operators different from the default equals;
+# possilble operators are: `%i[eql not_eql gt gteq lt lteq]`
+
+# The query "stars:>1" searches for when `stars` is greater than `1`
+m.key 'stars', op: :gt do |array, stars|
+  # ...
+end
+```
+
+You can use any type of backing repository, as long as it's reducable. Here is an example using Sequel:
+
+```rb
+class Article < Sequel::Model; end
+
+reducer = lambda do |dataset, m|
+  m.phrase do |phrase|
+    dataset.grep(%i[name body], "%#{phrase}%", case_insensitive: true)
+  end
+
+  m.key :published do |published|
+    dataset.where(published: published)
+  end
+
+  m.default { dataset }
+end
+
+query_reducer = Querylicious::QueryReducer.new(reducer)
+
+articles = query_reducer.call(Article, 'foo published:true').all
+```
+
+You can curry the call to the query reducer to avoid passing the repository each time:
+
+```rb
+
+article_search = query_reducer.curry.call(Article)
+
+articles = article_search.call('foo published:true').all
+```
 
 ## Development
 
