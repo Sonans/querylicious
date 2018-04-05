@@ -9,6 +9,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/querylicious.svg)](https://badge.fury.io/rb/querylicious)
 [![Build Status](https://travis-ci.org/huyderman/querylicious.svg?branch=master)](https://travis-ci.org/huyderman/querylicious)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6eeb81253ec37a703d9f/maintainability)](https://codeclimate.com/github/huyderman/querylicious/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6eeb81253ec37a703d9f/test_coverage)](https://codeclimate.com/github/huyderman/querylicious/test_coverage)
 
 > Querylicious is an opinionated search query parser and reducer.
 
