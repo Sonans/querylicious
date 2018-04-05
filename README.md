@@ -16,6 +16,8 @@
 
 ## Installation
 
+[![Join the chat at https://gitter.im/querylicious/Lobby](https://badges.gitter.im/querylicious/Lobby.svg)](https://gitter.im/querylicious/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Add this line to your application's Gemfile:
 
 ```ruby
