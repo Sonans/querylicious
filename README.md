@@ -11,12 +11,11 @@
 [![Build Status](https://travis-ci.org/huyderman/querylicious.svg?branch=master)](https://travis-ci.org/huyderman/querylicious)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6eeb81253ec37a703d9f/maintainability)](https://codeclimate.com/github/huyderman/querylicious/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6eeb81253ec37a703d9f/test_coverage)](https://codeclimate.com/github/huyderman/querylicious/test_coverage)
+[![Join the chat at https://gitter.im/querylicious/Lobby](https://badges.gitter.im/querylicious/Lobby.svg)](https://gitter.im/querylicious/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 > Querylicious is an opinionated search query parser and reducer.
 
 ## Installation
-
-[![Join the chat at https://gitter.im/querylicious/Lobby](https://badges.gitter.im/querylicious/Lobby.svg)](https://gitter.im/querylicious/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Add this line to your application's Gemfile:
 
