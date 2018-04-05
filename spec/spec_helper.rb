@@ -2,7 +2,10 @@
 
 require 'rspec'
 require 'rspec-parameterized'
+require 'simplecov'
 require 'querylicious'
+
+SimpleCov.start
 
 RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
