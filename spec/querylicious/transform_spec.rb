@@ -21,7 +21,10 @@ RSpec.describe Querylicious::Transform do
         [
           ['cats', { key: 'phrase', value: 'cats', op: :eql }],
           ['"fluffy cats"', { key: 'phrase', value: 'fluffy cats', op: :eql }],
-          ['"Dwayne \"The Rock\" Johnson"', { key: 'phrase', value: 'Dwayne "The Rock" Johnson', op: :eql}]
+          [
+            '"Dwayne \"The Rock\" Johnson"',
+            { key: 'phrase', value: 'Dwayne "The Rock" Johnson', op: :eql }
+          ]
         ].map { |params| [params.first.inspect, *params] }
       end
 
@@ -117,15 +120,18 @@ RSpec.describe Querylicious::Transform do
               op: :gt
             }
           ]],
-          ['cats created:2017-01-01T01:00:00+07:00..2017-03-01T15:30:15+07:00', [
-            { key: 'phrase', value: 'cats' },
-            {
-              key: 'created',
-              value: DateTime.new(2017, 1, 1, 1, 0, 0, '+7')..
-                     DateTime.new(2017, 3, 1, 15, 30, 15, '+7'),
-              op: :eql
-            }
-          ]],
+          [
+            'cats created:2017-01-01T01:00:00+07:00..2017-03-01T15:30:15+07:00',
+            [
+              { key: 'phrase', value: 'cats' },
+              {
+                key: 'created',
+                value: DateTime.new(2017, 1, 1, 1, 0, 0, '+7')..
+                       DateTime.new(2017, 3, 1, 15, 30, 15, '+7'),
+                op: :eql
+              }
+            ]
+          ],
           ['hello NOT world', [
             { key: 'phrase', value: 'hello' },
             { key: 'phrase', value: 'world', op: :not_eql }

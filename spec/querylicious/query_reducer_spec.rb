@@ -34,7 +34,6 @@ RSpec.describe Querylicious::QueryReducer do
         where(:case_name, :strings, :query, :result) do
           case_name = ->(query) { "and the query #{query.inspect}" }
 
-
           [
             [strings, 'foo', %w[foo]],
             [strings, 'NOT foo', %w[bar pizza]],
@@ -72,9 +71,7 @@ RSpec.describe Querylicious::QueryReducer do
 
   context '#to_proc' do
     context 'return value' do
-      let(:reducer) do
-        described_class.new(->(arr, m) { default { arr } })
-      end
+      let(:reducer) { described_class.new(->(arr, _) { default { arr } }) }
 
       subject { reducer.to_proc }
       let(:array) { %w[foo bar pizza] }

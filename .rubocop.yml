@@ -5,6 +5,9 @@ AllCops:
 Style/Alias:
   # Prefer `alias_method :foo, :bar` over `alias foo bar`
   EnforcedStyle: prefer_alias_method
+Style/DateTime:
+  Enabled: false
 Metrics/BlockLength:
   Exclude:
+    - querylicious.gemspec
     - spec/**/*_spec.rb
