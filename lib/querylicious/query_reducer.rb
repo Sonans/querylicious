@@ -8,7 +8,7 @@ require 'querylicious/matcher'
 require 'dry-initializer'
 
 module Querylicious
-  # Reducer
+  # Query Reducer for processing parsed query
   class QueryReducer
     extend Dry::Initializer
 
