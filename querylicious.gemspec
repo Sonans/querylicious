@@ -27,9 +27,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'parslet', '~> 1.8'
 
   spec.add_development_dependency 'bundler', '~> 1.15'
-  spec.add_development_dependency 'pry', '~> 0.11'
   spec.add_development_dependency 'mutant', '~> 0.8.0'
   spec.add_development_dependency 'mutant-rspec', '~> 0.8.0'
+  spec.add_development_dependency 'pry', '~> 0.11'
   spec.add_development_dependency 'rake', '~> 12.0'
   spec.add_development_dependency 'reek', '~> 4.7'
   spec.add_development_dependency 'rspec', '~> 3.0'
