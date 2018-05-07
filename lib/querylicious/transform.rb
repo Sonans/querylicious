@@ -10,12 +10,12 @@ module Querylicious
   class Transform < Parslet::Transform
     rule('') { nil }
     rule(string: simple(:it)) { Types::Coercible::String[it].gsub('\"', '"') }
-    rule(integer: simple(:it)) { Types::Form::Int[it] }
-    rule(date: simple(:it)) { Types::Form::Date[it] }
-    rule(datetime: simple(:it)) { Types::Form::DateTime[it] }
+    rule(integer: simple(:it)) { Types::Params::Integer[it] }
+    rule(date: simple(:it)) { Types::Params::Date[it] }
+    rule(datetime: simple(:it)) { Types::Params::DateTime[it] }
 
     rule(symbol: simple(:it)) do
-      symbol = Types::Form::Symbol[it.to_s.downcase]
+      symbol = Types::Coercible::Symbol[it.to_s.downcase]
 
       # Symbol normalization
       case symbol
@@ -29,7 +29,7 @@ module Querylicious
       end
     end
 
-    rule(list: sequence(:it)) { Types::Form::Array[it] }
+    rule(list: sequence(:it)) { Types::Params::Array[it] }
 
     rule(range: { start: simple(:first), end: simple(:last) }) do
       if first == :* && last == :*
@@ -75,13 +75,13 @@ module Querylicious
       { object: Types::Coercible::String[it], op: op }
     end
     rule(op: simple(:op), integer: simple(:it)) do
-      { object: Types::Form::Int[it], op: op }
+      { object: Types::Params::Integer[it], op: op }
     end
     rule(op: simple(:op), date: simple(:it)) do
-      { object: Types::Form::Date[it], op: op }
+      { object: Types::Params::Date[it], op: op }
     end
     rule(op: simple(:op), datetime: simple(:it)) do
-      { object: Types::Form::DateTime[it], op: op }
+      { object: Types::Params::DateTime[it], op: op }
     end
     rule(pair: {
            key: simple(:key),

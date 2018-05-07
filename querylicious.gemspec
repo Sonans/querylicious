@@ -22,8 +22,8 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'dry-initializer', '~> 2.3'
   spec.add_runtime_dependency 'dry-matcher', '>= 0.6.0', '< 0.8'
-  spec.add_runtime_dependency 'dry-struct', '~> 0.4.0'
-  spec.add_runtime_dependency 'dry-types', '~> 0.12.0'
+  spec.add_runtime_dependency 'dry-struct', '~> 0.5.0'
+  spec.add_runtime_dependency 'dry-types', '~> 0.13.0'
   spec.add_runtime_dependency 'parslet', '~> 1.8'
 
   spec.add_development_dependency 'bundler', '~> 1.15'

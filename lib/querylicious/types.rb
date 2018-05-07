@@ -7,9 +7,6 @@ module Querylicious
   module Types
     include Dry::Types.module
 
-    Range         = Dry::Types::Definition[::Range].new(::Range)
-    Strict::Range = Range.constrained(type: ::Range)
-
-    Form::Symbol = Symbol.constructor(&:to_sym)
+    Coercible::Symbol = Symbol.constructor { |sym| String(sym).to_sym }
   end
 end
