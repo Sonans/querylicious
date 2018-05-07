@@ -7,19 +7,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Updated minimum required versions for `dry-types` to `0.13.0` and `dry-struct`
+  to `0.5.0`
+
 ## [0.3.2] - 2018-04-13
 
-## Changed
+### Changed
 
 - Moved repository to [huyderman/querylicious][github-repo] and added branding
 
-## Fixed
+### Fixed
 
 - Ensure `QueryReducer#to_proc` returns a proper proc
 
 ## [0.3.1] - 2018-02-19
 
-## Changed
+### Changed
 
 - Update allowed versions of `dry-matcher` gem
 
